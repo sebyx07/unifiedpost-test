@@ -51,3 +51,8 @@ group :development, :test do
   gem 'selenium-webdriver'
 end
 
+
+# assets
+gem 'bower-rails'
+gem 'simple_form'
+

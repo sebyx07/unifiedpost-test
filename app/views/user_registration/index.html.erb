@@ -1,0 +1,12 @@
+<div class="row">
+  <div class="col-sm-8 col-sm-offset-2">
+    <%= simple_form_for(@user_registration_form, url: user_registration_path, method: :post) do |f| %>
+      <%= simple_fields_for(:user, @user_registration_form.user) do |uf| %>
+        <%= uf.input :first_name, label: 'First name' %>
+        <%= uf.input :last_name, label: 'Last name' %>
+        <%= uf.input :email, label: 'Email' %>
+        <%= uf.input :email_confirmation, label: 'Email confirmation', placeholder: 'Reenter your email' %>
+      <% end %>
+    <% end %>
+  </div>
+</div>
