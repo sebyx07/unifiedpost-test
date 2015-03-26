@@ -49,10 +49,17 @@ group :development, :test do
   gem 'capybara'
 
   gem 'selenium-webdriver'
+
+  gem 'database_cleaner'
 end
 
 
 # assets
 gem 'bower-rails'
 gem 'simple_form'
+
+
+# countries cities
+gem 'cities'
+gem 'countries'
 

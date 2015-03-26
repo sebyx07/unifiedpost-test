@@ -1,0 +1,12 @@
+<% flash.each do |key, errors| %>
+
+  <% unless key.empty? %>
+    <div class="<%= flash_class(key) %>">
+      <ul>
+        <% errors.each do |err| %>
+          <li><%= err %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+<% end %>
