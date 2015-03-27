@@ -23,9 +23,23 @@ class UserRegistrationController < ApplicationController
     end
   end
 
+  def send_confirm_email
+    @user = User.find_by(id: params[:user_id])
+
+    if @user
+      UserRegistrationMailer.confirm(@user).deliver_now
+      redirect_to user_registration_confirm_path(user_id: @user.id)
+    else
+      render_404
+    end
+  end
+
 
   def accept
-
+    @user = User.find_by(confirmation_code: params[:confirmation_code])
+    @user.confirm = true
+    @user.save
+    redirect_to user_registration_confirm_path(user_id: @user.id)
   end
 
   def decline

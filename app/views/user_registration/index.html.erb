@@ -7,7 +7,7 @@
         <%= uf.input :email, label: 'Email' %>
         <%= uf.input :email_confirmation, label: 'Email confirmation', placeholder: 'Reenter your email' %>
         <%= uf.input :country_id, collection: @user_registration_form.countries.map {|k, v| [v, k]}, label: 'Country'%>
-        <%= uf.input :city, collection: [], label: 'City', disabled: true %>
+        <%= uf.input :city, collection: [@user_registration_form.user.city], label: 'City', disabled: true %>
       <% end %>
 
       <%= f.submit 'Register', class: 'btn btn-success' %>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150326081348) do
+ActiveRecord::Schema.define(version: 20150326142612) do
 
   create_table "users", force: :cascade do |t|
     t.string  "first_name"
@@ -19,9 +19,11 @@ ActiveRecord::Schema.define(version: 20150326081348) do
     t.string  "email"
     t.string  "country_id"
     t.string  "city"
-    t.boolean "confirm",    default: false
+    t.boolean "confirm",           default: false
+    t.string  "confirmation_code"
   end
 
+  add_index "users", ["confirmation_code"], name: "index_users_on_confirmation_code"
   add_index "users", ["email"], name: "index_users_on_email"
 
 end

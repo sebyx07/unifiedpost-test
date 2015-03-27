@@ -5,7 +5,10 @@ Rails.application.routes.draw do
   get '/user_registration/cities/:country_id', to: 'user_registration#cities'
 
   get '/user_registration/confirm/:user_id', to: 'user_registration#confirm', as: 'user_registration_confirm'
+  post '/user_registration/confirm/:user_id/send_confirm_email', to: 'user_registration#send_confirm_email', as: 'user_registration_send_confirm_email'
+
   post '/user_registration/confirm/:user_id/decline', to:'user_registration#decline', as: 'user_registration_confirm_decline'
+  get '/user_registration/confirm/accept/:confirmation_code', to:'user_registration#accept', as: 'user_registration_confirm_accept'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
