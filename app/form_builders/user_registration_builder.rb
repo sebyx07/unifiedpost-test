@@ -25,12 +25,10 @@ class UserRegistrationBuilder
 
     unless @countries[user.country_id]
       @errors << 'Country not found'
-      valid = false
     end
 
     unless CitiesService.instance.get_cities_names(user.country_id).include? user.city
       @errors << 'City not found'
-      valid = false
     end
 
     unless @user.valid?
