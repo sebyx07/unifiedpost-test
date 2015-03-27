@@ -53,6 +53,10 @@ group :development, :test do
   gem 'database_cleaner'
 end
 
+group :development do
+  gem 'hirb'
+end
+
 
 # assets
 gem 'bower-rails'
