@@ -3,7 +3,7 @@ class UserRegistrationBuilder
   include ActiveModel::Conversion
   extend ActiveModel::Naming
 
-  attr_accessor :user, :country_id
+  attr_accessor :user
   attr_reader :countries, :errors
 
   def initialize(attributes = {})
@@ -25,10 +25,12 @@ class UserRegistrationBuilder
 
     unless @countries[user.country_id]
       @errors << 'Country not found'
+      valid = false
     end
 
     unless CitiesService.instance.get_cities_names(user.country_id).include? user.city
       @errors << 'City not found'
+      valid = false
     end
 
     unless @user.valid?
