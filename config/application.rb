@@ -31,6 +31,7 @@ module UnifiedpostTest
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.autoload_paths << Rails.root.join('app', 'form_builders')
     config.autoload_paths << Rails.root.join('app', 'services')
+    config.action_mailer.raise_delivery_errors = true
 
     config.assets.paths << Rails.root.join('vendor', 'assets', 'bower_components')
     config.assets.precompile << %r(.*.(?:eot|svg|ttf|woff|woff2)$)
