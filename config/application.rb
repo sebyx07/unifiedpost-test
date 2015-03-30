@@ -32,6 +32,7 @@ module UnifiedpostTest
     config.autoload_paths << Rails.root.join('app', 'form_builders')
     config.autoload_paths << Rails.root.join('app', 'services')
     config.action_mailer.raise_delivery_errors = true
+    config.action_mailer.perform_deliveries = true
 
     config.assets.paths << Rails.root.join('vendor', 'assets', 'bower_components')
     config.assets.precompile << %r(.*.(?:eot|svg|ttf|woff|woff2)$)
