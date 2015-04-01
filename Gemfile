@@ -67,3 +67,7 @@ gem 'simple_form'
 gem 'cities'
 gem 'countries'
 
+
+#mail api
+gem 'mailgun_rails'
+

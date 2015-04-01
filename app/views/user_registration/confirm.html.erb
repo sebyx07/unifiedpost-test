@@ -11,9 +11,11 @@
         <p>Confirmed: <%= @user.confirm %></p>
         <p>Confirmation code: <%= @user.confirmation_code %></p>
 
-        <%= button_to 'Invalid', user_registration_confirm_decline_path , method: :post, class: 'btn btn-danger' %>
-        <br />
-        <%= button_to 'Confirm by email', user_registration_send_confirm_email_path(user_id: @user), method: :post, class: 'btn btn-success' %>
+        <% unless @user.confirm %>
+          <%= button_to 'Invalid', user_registration_confirm_decline_path , method: :post, class: 'btn btn-danger' %>
+          <br />
+          <%= button_to 'Confirm by email', user_registration_send_confirm_email_path(user_id: @user), method: :post, class: 'btn btn-success' %>
+        <% end %>
       </div>
     </div>
 </div>

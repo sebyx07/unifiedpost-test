@@ -51,7 +51,7 @@ class UserRegistrationController < ApplicationController
 
   def cities
     city_service = CitiesService.instance
-    render json: city_service.get_cities_names(params['country_id'])
+    render json: city_service.get_cities_names(params['country_id']).sort
   end
 
   private
