@@ -1,4 +1,4 @@
-<h3>Active user: <%= "#{@user.first_name} #{@user.last_name}" %></h3>
+<h3>Activate user: <%= "#{@user.first_name} #{@user.last_name}" %></h3>
 <h3>
   <%= link_to 'Confirm Here', user_registration_confirm_accept_url(confirmation_code: @user.confirmation_code) %>
 </h3>

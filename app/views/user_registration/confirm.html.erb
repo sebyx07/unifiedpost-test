@@ -9,7 +9,6 @@
         <p>Country: <%= @user.country_id %></p>
         <p>City: <%= @user.city %></p>
         <p>Confirmed: <%= @user.confirm %></p>
-        <p>Confirmation code: <%= @user.confirmation_code %></p>
 
         <% unless @user.confirm %>
           <%= button_to 'Invalid', user_registration_confirm_decline_path , method: :post, class: 'btn btn-danger' %>
